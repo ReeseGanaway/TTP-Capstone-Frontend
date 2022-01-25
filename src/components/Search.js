@@ -23,10 +23,7 @@ export default function Search() {
     try {
       const response = await fetch(
         `https://api.pokemontcg.io/v2/cards?q=name:${pokename}`
-      ); /*, {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      });*/
+      );
       const cardData = await response.json();
       setCards(cardData);
       setCardsFetched(true);

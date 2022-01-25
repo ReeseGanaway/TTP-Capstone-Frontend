@@ -27,8 +27,11 @@ export default function Home() {
         <Link className="Links" to="/collection">
           Collection
         </Link>
-        <Link className="Links" to="/Search">
+        <Link className="Links" to="/search">
           Search
+        </Link>
+        <Link className="Links" to="/signup">
+          Sign Up
         </Link>
       </div>
       <div>{user.username}</div>
