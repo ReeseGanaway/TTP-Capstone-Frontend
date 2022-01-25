@@ -38,11 +38,14 @@ export default function Login(props) {
         <Link className="Links" to="/home">
           Home
         </Link>
+        <Link className="Links" to="/userProfile">
+          UserProfile
+        </Link>
         <Link className="Links" to="/login">
           Login
         </Link>
-        <Link className="Links" to="/userProfile">
-          UserProfile
+        <Link className="Links" to="/Search">
+          Search
         </Link>
       </div>
       <form onSubmit={handleSubmit}>
