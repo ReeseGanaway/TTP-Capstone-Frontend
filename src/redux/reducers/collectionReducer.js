@@ -1,8 +1,8 @@
 import {
   FETCH_COLLECTION,
-  START_FETCHING_COLLECTION,
   END_FETCHING_COLLECTION,
-} from "..actions/collectionActions";
+  START_FETCHING_COLLECTION,
+} from "../actions/collectionActions";
 
 const initialState = {
   collection: [],
