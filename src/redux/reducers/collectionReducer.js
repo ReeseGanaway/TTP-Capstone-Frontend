@@ -26,5 +26,7 @@ export const collectionReducer = (state = initialState, action) => {
         ...state,
         isFetchingCollection: false,
       };
+    default:
+      return state;
   }
 };
