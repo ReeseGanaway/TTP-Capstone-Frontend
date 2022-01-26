@@ -50,7 +50,7 @@ export default function Collection() {
     //console.log("In getcardfromcollection");
     //console.log(collectionItems);
     for (let i = 0; i < collection.length; i++) {
-      console.log(collection[i].collection_id);
+      //console.log(collection[i].collection_id);
       if (collection[i].collection_id == user.collection_id) {
         currentCardId = collection[i].card_id;
         console.log(currentCardId);
@@ -62,6 +62,7 @@ export default function Collection() {
           //const newCards = [...cards];
           //console.log(newCards);
           cards.push(cardData);
+          console.log("Hi");
           //setCards(newCards);
           //cards.push(cardData);
           console.log(cards);
@@ -106,7 +107,7 @@ export default function Collection() {
       <div>
         {/* {gotCards ? ( */}
         {cards.map((card) => (
-          <div>
+          <div key={card.card_id}>
             <img src={card.image} />
           </div>
         ))}
