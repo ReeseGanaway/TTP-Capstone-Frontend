@@ -13,18 +13,21 @@ export default function Collection(props) {
     dispatch(getUserThunk());
   }, [dispatch]);
 
-  const [collectionItems, setCollectionItems] = useState([{ number: "1" }]);
-  let cards = [];
+  const [collectionItems, setCollectionItems] = useState([]);
+  const [cards, setCards] = useState([]);
   const [collectionFetched, setCollectionFetched] = useState(false);
+  const [gotCards, setGotCards] = useState(false);
 
   async function getCollection() {
     try {
       const response = await fetch("http://localhost:5000/collection");
-      console.log(response);
+      //console.log(response);
       const collectionData = await response.json();
       console.log(collectionData);
       setCollectionItems(collectionData);
+      console.log(collectionItems);
       setCollectionFetched(true);
+      getCardsFromCollection();
     } catch (err) {
       console.error(err.message);
     }
@@ -32,16 +35,16 @@ export default function Collection(props) {
 
   useEffect(() => {
     getCollection();
-    //getCardsFromCollection();
   }, []);
 
   //getCardsFromCollection();
 
   async function getCardsFromCollection() {
-    let currentCardId = "";
+    let currentCardId = "blank";
+    console.log(currentCardId);
     console.log(collectionItems);
     for (let i = 0; i < collectionItems.length; i++) {
-      console.log(user.collection_id);
+      //console.log(user.collection_id);
       if (collectionItems[i].collection_id == user.collection_id) {
         currentCardId = collectionItems[i].card_id;
         try {
@@ -49,8 +52,13 @@ export default function Collection(props) {
             `http://localhost:5000/card/${currentCardId}`
           );
           const cardData = await response.json();
-          cards.push(cardData);
+          const newCards = [...cards];
+          console.log(newCards);
+          newCards.push(cardData);
+          setCards(newCards);
+          //cards.push(cardData);
           console.log(cards);
+          setGotCards(true);
         } catch (err) {
           console.error(err.message);
         }
@@ -58,9 +66,12 @@ export default function Collection(props) {
     }
   }
 
-  useEffect(() => {
-    getCardsFromCollection();
-  }, []);
+  //console.log(gotCards);
+  //console.log(cards);
+
+  // useEffect(() => {
+  //   getCardsFromCollection();
+  // }, []);
 
   return (
     <Fragment>
@@ -83,15 +94,16 @@ export default function Collection(props) {
       </div>
       <div>{user.username}'s Collection</div>
       <div>
-        {collectionFetched ? (
-          cards.map((card) => (
-            <div>
-              <img src={card.image} />
-            </div>
-          ))
+        {/* {gotCards ? ( */}
+        {cards.map((card) => (
+          <div>
+            <img src={card.image} />
+          </div>
+        ))}
+        {/* ))
         ) : (
           <p>Add cards to your collection!</p>
-        )}
+        )} */}
       </div>
     </Fragment>
   );

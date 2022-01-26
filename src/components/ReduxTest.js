@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getCardsThunk } from "../redux/actions/cardsThunk";
-import { SET_USERNAME } from "../redux/actions/emailActions";
+
 import { getUserThunk } from "../redux/actions/userThunk";
 
 export default function ReduxTest() {
