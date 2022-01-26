@@ -2,9 +2,13 @@
   text-align: center;
 }
 
+/* body {
+  background-color: #333;
+}
+ */
 .NavBars {
   padding: 25px;
-  background-color: rgb(25, 9, 116);
+ /*  background-color: #333; */
   text-align: left;
   font-weight: bolder;
   font-size: 1.2rem;
@@ -35,5 +39,3 @@
   display: flex;
 }
 
-.nosearch {
-}

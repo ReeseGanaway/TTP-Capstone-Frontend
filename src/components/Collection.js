@@ -39,6 +39,7 @@ export default function Collection(props) {
       console.log("hello");
       if (collectionItems.collection_id == user.collection_id) {
         currentCardId = collectionItems[i].card_id;
+        console.log(currentCardId);
         try {
           const response = await fetch(
             `http://localhost:5000/card/${currentCardId}`

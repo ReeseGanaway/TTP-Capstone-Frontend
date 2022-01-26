@@ -4,11 +4,21 @@ import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import Login from "./components/Login";
 import UserProfile from "./components/UserProfile";
 import Home from "./components/Home";
+
 import SignUp from "./components/SignUp";
 import { useSelector, useDispatch } from "react-redux";
 import ReduxTest from "./components/ReduxTest";
 import Collection from "./components/Collection";
 import Search from "./components/Search";
+import styled from 'styled-components';
+/* import moon from './components/icons/moon.png';
+import sun from './components/icons/sun.png'; */
+
+ import {ThemeProvider} from "styled-components";
+import  {useDarkMode} from "./components/useDarkMode";
+import { GlobalStyles } from "./components/global";
+import { lightTheme, darkTheme } from "./components/theme";
+import Toggle from "./components/Toggle"; 
 
 function App() {
   const [collection_id, setCollection_Id] = useState();
@@ -16,6 +26,17 @@ function App() {
   const [loading, setLoading] = useState(true);
   const collectionId = useSelector((state) => state.collectionId.collectionId);
   const dispatch = useDispatch();
+
+  /* const [isDarkMode, setDarkMode] = useState(false);
+
+  const handleToggle = () => {
+    setDarkMode(!isDarkMode);
+    // console.log(isDarkMode)
+  }
+ */
+  const [theme, toggleTheme] = useDarkMode();
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
 
   useEffect(() => {
     dispatch({ type: "GET_COLLECTIONID" });
@@ -36,8 +57,18 @@ function App() {
     setCollection_Id(collectionInfo);
   };
 
+ /*  if (!componentMounted) {
+    return <div />
+  };  */
+
   return (
+    <ThemeProvider theme={themeMode}>
     <Fragment>
+      <>
+      <GlobalStyles />
+      <Toggle theme={theme} toggleTheme={toggleTheme} />
+      {/* <GlobalStyles /> 
+      <Toggle theme={theme} toggleTheme={themeToggler} /> */}
       <BrowserRouter>
         <Routes>
           <Route
@@ -84,10 +115,16 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
+      
+      
+      </>
+    
       {/*<div>{collection_id}</div>
       <div>{!loading ? <p>{collectionId}</p> : <h1>Loading...</h1>}</div>*/}
     </Fragment>
+    </ThemeProvider>
   );
 }
+
 
 export default App;
