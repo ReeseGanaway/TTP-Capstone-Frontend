@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import { cardsReducer } from "./cardsReducer";
-import { collectionIdReducer } from "./collectionIdReducer";
+import { collectionIdReducer } from "./totalcollectionReducer";
 import { userReducer } from "./userReducer";
 import { collectionReducer } from "./collectionReducer";
 

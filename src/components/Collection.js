@@ -1,13 +1,19 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector, useDispatch, ReactReduxContext } from "react-redux";
 import { Link } from "react-router-dom";
+import { getCollectionThunk } from "../redux/actions/collectionThunk";
 
 import { getUserThunk } from "../redux/actions/userThunk";
 
-export default function Collection(props) {
+export default function Collection() {
   const [user] = useSelector((state) => [state.user.user]);
+  const [collection] = useSelector((state) => [state.collection.collection]);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCollectionThunk());
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getUserThunk());
@@ -41,12 +47,12 @@ export default function Collection(props) {
 
   async function getCardsFromCollection() {
     let currentCardId = "blank";
-    console.log(currentCardId);
-    console.log(collectionItems);
-    for (let i = 0; i < collectionItems.length; i++) {
+    console.log("In getcardfromcollection");
+    //console.log(collectionItems);
+    for (let i = 0; i < collection.length; i++) {
       //console.log(user.collection_id);
-      if (collectionItems[i].collection_id == user.collection_id) {
-        currentCardId = collectionItems[i].card_id;
+      if (collection[i].collection_id == user.collection_id) {
+        currentCardId = collection[i].card_id;
         try {
           const response = await fetch(
             `http://localhost:5000/card/${currentCardId}`
@@ -90,6 +96,9 @@ export default function Collection(props) {
         </Link>
         <Link className="Links" to="/search">
           Search
+        </Link>
+        <Link className="Links" to="/reduxtest">
+          ReduxTest
         </Link>
       </div>
       <div>{user.username}'s Collection</div>
