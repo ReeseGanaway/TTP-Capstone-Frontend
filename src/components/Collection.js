@@ -29,9 +29,9 @@ export default function Collection() {
       const response = await fetch("http://localhost:5000/collection");
       //console.log(response);
       const collectionData = await response.json();
-      console.log(collectionData);
+      //console.log(collectionData);
       setCollectionItems(collectionData);
-      console.log(collectionItems);
+      //console.log(collectionItems);
       setCollectionFetched(true);
       getCardsFromCollection();
     } catch (err) {
@@ -47,21 +47,22 @@ export default function Collection() {
 
   async function getCardsFromCollection() {
     let currentCardId = "blank";
-    console.log("In getcardfromcollection");
+    //console.log("In getcardfromcollection");
     //console.log(collectionItems);
     for (let i = 0; i < collection.length; i++) {
-      //console.log(user.collection_id);
+      console.log(collection[i].collection_id);
       if (collection[i].collection_id == user.collection_id) {
         currentCardId = collection[i].card_id;
+        console.log(currentCardId);
         try {
           const response = await fetch(
             `http://localhost:5000/card/${currentCardId}`
           );
           const cardData = await response.json();
-          const newCards = [...cards];
-          console.log(newCards);
-          newCards.push(cardData);
-          setCards(newCards);
+          //const newCards = [...cards];
+          //console.log(newCards);
+          cards.push(cardData);
+          //setCards(newCards);
           //cards.push(cardData);
           console.log(cards);
           setGotCards(true);
