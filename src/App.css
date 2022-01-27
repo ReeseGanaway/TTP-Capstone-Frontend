@@ -3,7 +3,7 @@
 }
 
 .holderUser {
-  background: linear-gradient(-60deg, yellow 30%, black 30%);
+  /* background: linear-gradient(-60deg, yellow 30%, black 30%); */
   height: 1000px;
 }
 .homeUsername {
@@ -128,7 +128,7 @@ form {
 }
 
 .ContainerHalfway {
-  background-image: -webkit-linear-gradient(-30deg, #2a2b2c 58%, #fbf107 42%);
+  /* background-image: -webkit-linear-gradient(-30deg, #2a2b2c 58%, #fbf107 42%); */
   height: 60 vh;
 }
 
