@@ -1,7 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector, useDispatch, ReactReduxContext } from "react-redux";
 import { Link } from "react-router-dom";
-
+import Alice from "./Alice";
+import Alice1 from "./Alice1";
 import { getUserThunk } from "../redux/actions/userThunk";
 
 export default function Collection(props) {
@@ -120,6 +121,11 @@ export default function Collection(props) {
           </div>
         ))}
       </div>
+      <br />
+      <br />
+      <br />
+        <Alice />
+        <Alice1 />
     </Fragment>
   );
 }

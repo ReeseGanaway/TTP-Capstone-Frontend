@@ -156,11 +156,13 @@ export default function Search() {
         ></input>
         <button onClick={handleSubmit}>Search</button>
         
+        
         <div className="ContainerColumn">
-        <p><img src="https://www.freepnglogos.com/uploads/pokemon-png/pokemon-png-image-famous-anime-character-png-only-39.png" width="170" alt="pokemon png image famous anime character png only" />       
-          <img src="https://www.freepnglogos.com/uploads/pokemon-png/pokemon-png-jigglypuff-pok-dex-24.png" width="150" alt="pokemon png jigglypuff pok dex" />
-        <img src="https://www.freepnglogos.com/uploads/pokemon-png/pokemon-png-image-famous-anime-character-png-only-6.png" width="140" alt="pokemon png image famous anime character png only" /> 
-        <img src="https://www.freepnglogos.com/uploads/pokemon-png/pokemon-everything-all-you-will-ever-need-know-37.png" width="140" alt="pokemon everything all you will ever need know" />
+          <br />
+        <p><img src="https://i0.wp.com/pkmncards.com/wp-content/uploads/en_US-Promo_HGSS-HGSS05-hoothoot.jpg?fit=734%2C1024&ssl=1" width="150" alt="pokemon png image famous anime character png only" />       
+          <img src="https://i0.wp.com/pkmncards.com/wp-content/uploads/en_US-Promo_HGSS-HGSS13-smoochum.jpg?fit=734%2C1024&ssl=1" width="150" alt="pokemon png jigglypuff pok dex" />
+        <img src="https://i0.wp.com/pkmncards.com/wp-content/uploads/en_US-Promo_HGSS-HGSS17-minun.jpg?fit=734%2C1024&ssl=1" width="150" alt="pokemon png image famous anime character png only" /> 
+        <img src="https://i0.wp.com/pkmncards.com/wp-content/uploads/en_US-Promo_HGSS-HGSS12-cleffa.jpg?fit=734%2C1024&ssl=1" width="150" alt="pokemon everything all you will ever need know" />
         </p> 
         </div>
         
@@ -192,6 +194,7 @@ export default function Search() {
           Add Card
         </button>
       </form>
+      
       <br />
     </Fragment>
   );

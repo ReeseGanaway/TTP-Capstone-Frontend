@@ -11,8 +11,11 @@ Find pokemons of a type (e.g. all evolutions of pikachu)
 
 
 Commands:
-Description     	               Command
-install styled components	  npm i styled-components
+Description     	                   Command
+install styled components	       npm i styled-components
+install react-alice-carousel       npm install react-alice-carousel
+
+
 
 To Search Pokemon
 By Name: charizard
