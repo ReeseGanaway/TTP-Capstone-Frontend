@@ -14,5 +14,7 @@ export const getUserThunk = (email) => async (dispatch) => {
     dispatch({ type: FETCH_USER, payload: data });
 
     dispatch({ type: END_FETCHING_USER });
-  } catch (error) {}
+  } catch (err) {
+    console.error(err.message);
+  }
 };

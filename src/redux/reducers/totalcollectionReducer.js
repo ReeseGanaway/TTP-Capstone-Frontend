@@ -1,8 +1,8 @@
 import {
   GET_COLLECTIONID,
-  RESET,
   INCREMENT,
-} from "../actions/collectionIdActions";
+  RESET,
+} from "../actions/totalcollectionActions";
 
 const initialState = {
   collectionId: 0,

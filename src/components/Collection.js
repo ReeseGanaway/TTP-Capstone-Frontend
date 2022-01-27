@@ -1,54 +1,61 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { useSelector, useDispatch, ReactReduxContext } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-
+import { getCollectionThunk } from "../redux/actions/collectionThunk";
 import { getUserThunk } from "../redux/actions/userThunk";
+import UserCards from "./UserCards";
 
-export default function Collection(props) {
+export default function Collection() {
   const [user] = useSelector((state) => [state.user.user]);
+  const [collection] = useSelector((state) => [state.collection.collection]);
+  const [usercards] = useSelector((state) => [state.usercards.usercards]);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCollectionThunk(user.collection_id));
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getUserThunk());
   }, [dispatch]);
 
-  const [collectionItems, setCollectionItems] = useState([{ number: "1" }]);
-  let cards = [];
+  const [cards, setCards] = useState([]);
+  const [cardNums, setCardNums] = useState([]);
   const [collectionFetched, setCollectionFetched] = useState(false);
+  const [getAllCards, setGetAllCards] = useState(false);
 
-  async function getCollection() {
-    try {
-      const response = await fetch("http://localhost:5000/collection");
-      console.log(response);
-      const collectionData = await response.json();
-      console.log(collectionData);
-      setCollectionItems(collectionData);
-      setCollectionFetched(true);
-    } catch (err) {
-      console.error(err.message);
-    }
-  }
+  // const addCard = (newCard) => {
+  //   dispatch({ type: "ADD_CARD", newItem: newCard });
+  // };
+
+  // const reset = () => {
+  //   dispatch({ type: "RESET" });
+  // };
 
   useEffect(() => {
-    getCollection();
-    //getCardsFromCollection();
-  }, []);
+    getCardsFromCollection();
+  }, [collection]);
 
-  //getCardsFromCollection();
+  console.log(collection);
+  console.log(cards);
 
   async function getCardsFromCollection() {
     let currentCardId = "";
-    console.log(collectionItems);
-    for (let i = 0; i < collectionItems.length; i++) {
-      console.log(user.collection_id);
-      if (collectionItems[i].collection_id == user.collection_id) {
-        currentCardId = collectionItems[i].card_id;
+    for (let i = 0; i < collection.length; i++) {
+      currentCardId = collection[i].card_id;
+
+      console.log(currentCardId);
+      if (!cardNums.includes(currentCardId)) {
+        cardNums.push(currentCardId);
         try {
+          console.log("hello");
           const response = await fetch(
             `http://localhost:5000/card/${currentCardId}`
           );
           const cardData = await response.json();
+          console.log(cardData);
+          console.log(response);
           cards.push(cardData);
           console.log(cards);
         } catch (err) {
@@ -58,9 +65,9 @@ export default function Collection(props) {
     }
   }
 
-  useEffect(() => {
-    getCardsFromCollection();
-  }, []);
+  const handleGetAllCards = () => {
+    setGetAllCards(true);
+  };
 
   return (
     <Fragment>
@@ -80,18 +87,38 @@ export default function Collection(props) {
         <Link className="Links" to="/search">
           Search
         </Link>
+        <Link className="Links" to="/reduxtest">
+          ReduxTest
+        </Link>
       </div>
-      <div>{user.username}'s Collection</div>
-      <div>
-        {collectionFetched ? (
-          cards.map((card) => (
-            <div>
-              <img src={card.image} />
-            </div>
-          ))
+
+      {/* {!getAllCards ? ( <div>What would you like to do {user.username}?</div>
+      <button onClick={handleGetAllCards}>Show All My Cards</button>
+        ) : (<div>{user.username}'s Collection</div> 
+        <UserCards usercards={cards}></UserCards>
+          )}
+           */}
+
+      <div className="cardImages">
+        {!getAllCards ? (
+          <>
+            <div>What would you like to do {user.username}?</div>
+            <button onClick={handleGetAllCards}>Show All My Cards</button>
+          </>
         ) : (
-          <p>Add cards to your collection!</p>
+          <>
+            <div>{user.username}'s Collection</div>
+            <UserCards usercards={cards}></UserCards>
+          </>
         )}
+      </div>
+
+      <div>
+        {/* {cards.map((card) => (
+          <div key={card.card_id}>
+            <img src={card.image} />
+          </div>
+        ))} */}
       </div>
     </Fragment>
   );

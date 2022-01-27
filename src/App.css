@@ -27,6 +27,11 @@
 .searchedCards {
   display: inline-block;
 }
+
+.usercardimages {
+  display: inline-block;
+}
+
 .singleCard {
   padding: 50px;
 }
