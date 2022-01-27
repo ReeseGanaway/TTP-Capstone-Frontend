@@ -1,8 +1,9 @@
-import React, { useState, Fragment, useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getUserThunk } from "../redux/actions/userThunk";
 import { useSelector, useDispatch } from "react-redux";
-/* import "./poke.css"; */
+
+
 
 export default function Home() {
   const [user] = useSelector((state) => [state.user.user]);
@@ -14,9 +15,8 @@ export default function Home() {
   }, [dispatch]);
 
   return (
-    <Fragment>
-           
-      <div className="NavBars">
+   <Fragment>
+     <div className="NavBars">
       <svg
       xmlns="http://www.w3.org/2000/svg"
       width="40"
@@ -54,51 +54,50 @@ export default function Home() {
       />
     </svg>
      
-        <Link className="Links" to="/home">
+        <Link classNameName="Links" to="/home">
           Home
         </Link>
-        <Link className="Links" to="/userProfile">
+
+        <Link classNameName="Links" to="/userProfile">
           UserProfile
         </Link>
-        <Link className="Links" to="/login">
+        <Link classNameName="Links" to="/login">
           Login
         </Link>
-        <Link className="Links" to="/collection">
+        <Link classNameName="Links" to="/collection">
           Collection
         </Link>
-        <Link className="Links" to="/Search">
+        <Link classNameName="Links" to="/Search">
           Search
         </Link>
-        <Link className="Links" to="/SignUp">
+        <Link classNameName="Links" to="/SignUp">
           Sign Up
-        </Link>
-       
-      </div>
-
-      
+        </Link> 
+     
       <div>{user.username}</div>
       <div>{user.collection_id}</div>
-
-
-      <div className="slider-wrapper ">
-    <div className="nav-btn prev"></div>
-    <ul className="slider">
-      <li>
-        <div className="pokedex-bg">357</div>
-        <img className="character" alt="Tropius" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full//357.png"></img>
-        <div className="mini-profile">
-          <h5>Tropius <span className="pokedex">357</span></h5>
-          
-         
+      </div>
+      <div className="ContainerHalfway">
+       <div className="ContainerRow">
+        <div className="ContainerColumn">
+          <img src="https://www.freepnglogos.com/uploads/pokemon-png/pokemon-png-transparent-pokemon-images-pluspng-19.png" width="300" alt="pokemon png transparent pokemon images pluspng" />
+          <Link to="/search">
+            <button className="textbutton" src="/assets/search.png" text="Search For Pokemons" />
+          </Link>
         </div>
-        
-    
-      </li>
-      </ul>
+        <div className="ContainerColumn">
+        <img src="https://www.freepnglogos.com/uploads/pokemon-png/ash-pokemon-png-file-26.png" width="300" alt="ash pokemon png file" />
+          <Link to="/SignUp">
+            <button className="textbutton" src="/assets/pokeball.png" text="Create a new Profile" />
+          </Link>
+        </div>
+       </div>
+
       </div>
       
-
+    
+      
     </Fragment>
-   
+  
   );
 }

@@ -7,19 +7,19 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    align-items: center;  
+  display:flex;
+  justify-content: space-around;
+  align-item:center;
+  text-align:center;
     background: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
-    display: flex;
-    /* flex-direction: row;  */
-    justify-content: center;
-    /* height: 85vh; */
+    color: ${({ theme }) => theme.text}; 
     margin: 15px;
-    padding: 30px;
-    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    transition: all 0.25s linear;
+    padding: 15px; 
+    font-weight: bolder;
+    font-size: 1.2rem;
+    text-decoration: none;
   }
-
-  background: ${({ theme }) => theme.body};
+  
+background: ${({ theme }) => theme.body};
 color: ${({ theme }) => theme.text};
 transition: all 0.25s linear`;
