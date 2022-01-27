@@ -21,8 +21,9 @@ export default function Collection() {
   }, [dispatch]);
 
   const [cards, setCards] = useState([]);
+  const [cardNums, setCardNums] = useState([]);
   const [collectionFetched, setCollectionFetched] = useState(false);
-  const [gotCards, setGotCards] = useState(false);
+  const [getAllCards, setGetAllCards] = useState(false);
 
   // const addCard = (newCard) => {
   //   dispatch({ type: "ADD_CARD", newItem: newCard });
@@ -43,22 +44,30 @@ export default function Collection() {
     let currentCardId = "";
     for (let i = 0; i < collection.length; i++) {
       currentCardId = collection[i].card_id;
+
       console.log(currentCardId);
-      try {
-        console.log("hello");
-        const response = await fetch(
-          `http://localhost:5000/card/${currentCardId}`
-        );
-        const cardData = await response.json();
-        console.log(cardData);
-        console.log(response);
-        cards.push(cardData);
-        console.log(cards);
-      } catch (err) {
-        console.error(err.message);
+      if (!cardNums.includes(currentCardId)) {
+        cardNums.push(currentCardId);
+        try {
+          console.log("hello");
+          const response = await fetch(
+            `http://localhost:5000/card/${currentCardId}`
+          );
+          const cardData = await response.json();
+          console.log(cardData);
+          console.log(response);
+          cards.push(cardData);
+          console.log(cards);
+        } catch (err) {
+          console.error(err.message);
+        }
       }
     }
   }
+
+  const handleGetAllCards = () => {
+    setGetAllCards(true);
+  };
 
   return (
     <Fragment>
@@ -82,9 +91,29 @@ export default function Collection() {
           ReduxTest
         </Link>
       </div>
-      <div>{user.username}'s Collection</div>
-      <div>
+
+      {/* {!getAllCards ? ( <div>What would you like to do {user.username}?</div>
+      <button onClick={handleGetAllCards}>Show All My Cards</button>
+        ) : (<div>{user.username}'s Collection</div> 
         <UserCards usercards={cards}></UserCards>
+          )}
+           */}
+
+      <div className="cardImages">
+        {!getAllCards ? (
+          <>
+            <div>What would you like to do {user.username}?</div>
+            <button onClick={handleGetAllCards}>Show All My Cards</button>
+          </>
+        ) : (
+          <>
+            <div>{user.username}'s Collection</div>
+            <UserCards usercards={cards}></UserCards>
+          </>
+        )}
+      </div>
+
+      <div>
         {/* {cards.map((card) => (
           <div key={card.card_id}>
             <img src={card.image} />
