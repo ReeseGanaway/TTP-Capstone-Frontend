@@ -2,6 +2,8 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { getCollectionThunk } from "../redux/actions/collectionThunk";
+import Alice from "./Alice";
+import Alice1 from "./Alice1";
 import { getUserThunk } from "../redux/actions/userThunk";
 import UserCards from "./UserCards";
 
@@ -77,7 +79,7 @@ export default function Collection() {
           width="40"
           height="40"
           viewBox="0 0 1024 1024"
-          fill="red"
+          fill="currentColor"
         >
           <path
             strokeWidth="1"
@@ -156,6 +158,11 @@ export default function Collection() {
           </div>
         ))} */}
       </div>
+      <br />
+      <br />
+      <br />
+      <Alice />
+      <Alice1 />
     </Fragment>
   );
 }

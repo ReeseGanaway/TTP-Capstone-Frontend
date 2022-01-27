@@ -4,11 +4,20 @@ import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import Login from "./components/Login";
 import UserProfile from "./components/UserProfile";
 import Home from "./components/Home";
+
 import SignUp from "./components/SignUp";
 import { useSelector, useDispatch } from "react-redux";
 import ReduxTest from "./components/ReduxTest";
 import Collection from "./components/Collection";
 import Search from "./components/Search";
+import styled from 'styled-components';
+import "./App.css";
+
+import {ThemeProvider} from "styled-components";
+import  {useDarkMode} from "./components/useDarkMode";
+import { GlobalStyles } from "./components/global";
+import { lightTheme, darkTheme } from "./components/theme";
+import Toggle from "./components/Toggle"; 
 
 function App() {
   const [collection_id, setCollection_Id] = useState();
@@ -16,6 +25,11 @@ function App() {
   const [loading, setLoading] = useState(true);
   const collectionId = useSelector((state) => state.collectionId.collectionId);
   const dispatch = useDispatch();
+
+  
+  const [theme, toggleTheme] = useDarkMode();
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
 
   useEffect(() => {
     dispatch({ type: "GET_COLLECTIONID" });
@@ -36,8 +50,12 @@ function App() {
     setCollection_Id(collectionInfo);
   };
 
+ 
+
   return (
+    <ThemeProvider theme={themeMode}>
     <Fragment>
+      <>
       <BrowserRouter>
         <Routes>
           <Route
@@ -84,10 +102,16 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
-      {/*<div>{collection_id}</div>
-      <div>{!loading ? <p>{collectionId}</p> : <h1>Loading...</h1>}</div>*/}
+      
+      
+      </>
+      <GlobalStyles />
+      <Toggle theme={theme} toggleTheme={toggleTheme} />
+    
     </Fragment>
+    </ThemeProvider>
   );
 }
+
 
 export default App;
