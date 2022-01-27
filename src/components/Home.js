@@ -14,28 +14,32 @@ export default function Home() {
 
   return (
     <Fragment>
-      <div className="NavBars">
-        <Link className="Links" to="/home">
-          Home
-        </Link>
-        <Link className="Links" to="/userProfile">
-          UserProfile
-        </Link>
-        <Link className="Links" to="/login">
-          Login
-        </Link>
-        <Link className="Links" to="/collection">
-          Collection
-        </Link>
-        <Link className="Links" to="/search">
-          Search
-        </Link>
-        <Link className="Links" to="/signup">
-          Sign Up
-        </Link>
+      <div className="overall">
+        <div className="NavBars">
+          <Link className="Links" to="/home">
+            Home
+          </Link>
+          <Link className="Links" to="/userProfile">
+            UserProfile
+          </Link>
+          <Link className="Links" to="/login">
+            Login
+          </Link>
+          <Link className="Links" to="/collection">
+            Collection
+          </Link>
+          <Link className="Links" to="/search">
+            Search
+          </Link>
+          <Link className="Links" to="/signup">
+            Sign Up
+          </Link>
+        </div>
+        <div className="holderUser">
+          <div className="homeUsername">{user.username}</div>
+          <div>{user.collection_id}</div>
+        </div>
       </div>
-      <div>{user.username}</div>
-      <div>{user.collection_id}</div>
     </Fragment>
   );
 }
