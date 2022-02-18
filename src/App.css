@@ -81,6 +81,10 @@ body {
   padding: 40px;
 }
 
+.tcgdexheader {
+  padding-top: 30px;
+}
+
 #allContent {
   display: flex;
 }

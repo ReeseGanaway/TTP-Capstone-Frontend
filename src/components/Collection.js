@@ -145,7 +145,7 @@ export default function Collection() {
           </>
         ) : (
           <>
-            <div>{user.username}'s Collection</div>
+            <h1>{user.username}'s Collection</h1>
             <UserCards usercards={cards}></UserCards>
           </>
         )}

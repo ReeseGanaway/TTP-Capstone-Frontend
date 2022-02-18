@@ -47,10 +47,15 @@ export default function UserCards(props) {
   //   }, []);
 
   return (
-    <div className="usercardImages">
+    <div className="">
       {props.usercards.map((card) => (
-        <div className="singleCard" key={card.card_id}>
-          <img src={card.image} />
+        <div className="searchedCards">
+          <div className="singleCard" key={card.card_id}>
+            <img src={card.image} />
+            <p>{card.pokemon}</p>
+            <p>HP : {card.hp}</p>
+            <p>Card ID : {card.card_id}</p>
+          </div>
         </div>
       ))}
     </div>

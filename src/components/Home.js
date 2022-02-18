@@ -71,10 +71,9 @@ export default function Home() {
         <Link classNameName="Links" to="/SignUp">
           Sign Up
         </Link>
-
-        <div>{user.username}</div>
-        <div>{user.collection_id}</div>
       </div>
+
+      <h1 className="tcgdexheader">Welcome to TCGdex!</h1>
       <div className="ContainerHalfway">
         <div className="ContainerRow">
           <div className="ContainerColumn">
@@ -88,7 +87,9 @@ export default function Home() {
                 className="textbutton"
                 src="/assets/search.png"
                 text="Search For Pokemons"
-              />
+              >
+                Search!
+              </button>
             </Link>
           </div>
           <div className="ContainerColumn">
@@ -102,7 +103,9 @@ export default function Home() {
                 className="textbutton"
                 src="/assets/pokeball.png"
                 text="Create a new Profile"
-              />
+              >
+                Sign Up!
+              </button>
             </Link>
           </div>
         </div>
