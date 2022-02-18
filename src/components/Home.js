@@ -52,23 +52,23 @@ export default function Home() {
           />
         </svg>
 
-        <Link classNameName="Links" to="/home">
+        <Link className="Links" to="/home">
           Home
         </Link>
 
-        <Link classNameName="Links" to="/userProfile">
+        <Link className="Links" to="/userProfile">
           UserProfile
         </Link>
-        <Link classNameName="Links" to="/login">
+        <Link className="Links" to="/login">
           Login
         </Link>
-        <Link classNameName="Links" to="/collection">
+        <Link className="Links" to="/collection">
           Collection
         </Link>
-        <Link classNameName="Links" to="/Search">
+        <Link className="Links" to="/Search">
           Search
         </Link>
-        <Link classNameName="Links" to="/SignUp">
+        <Link className="Links" to="/SignUp">
           Sign Up
         </Link>
       </div>

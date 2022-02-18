@@ -9,11 +9,6 @@
 .homeUsername {
   background-color: chocolate;
 }
-.NavBars {
-  padding: 25px;
-  background-color: yellow;
-  text-align: left;
-}
 
 body {
   display: flex;
@@ -29,31 +24,16 @@ body {
   text-decoration: none;
   border-style: solid;
 }
-*/ .NavBars {
-  display: flex;
-  justify-content: space-around;
-  padding: 25px;
-  background-color: #333;
-  text-align: center;
-  font-weight: bolder;
-  font-size: 1.2rem;
-  text-decoration: none;
-}
-.NavBars a {
-  color: black;
-  text-decoration: underline;
-}
-
 .NavBars {
   display: flex;
   justify-content: space-around;
   padding: 25px;
-  /* background-color: #333; */
+  background-color: yellow;
+  color: black;
   text-align: center;
   font-weight: bolder;
   font-size: 1.2rem;
-  text-decoration: none;
-  color: black;
+  text-decoration: underline;
 }
 
 .Links {
