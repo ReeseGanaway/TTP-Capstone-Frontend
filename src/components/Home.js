@@ -52,29 +52,28 @@ export default function Home() {
           />
         </svg>
 
-        <Link classNameName="Links" to="/home">
+        <Link className="Links" to="/home">
           Home
         </Link>
 
-        <Link classNameName="Links" to="/userProfile">
+        <Link className="Links" to="/userProfile">
           UserProfile
         </Link>
-        <Link classNameName="Links" to="/login">
+        <Link className="Links" to="/login">
           Login
         </Link>
-        <Link classNameName="Links" to="/collection">
+        <Link className="Links" to="/collection">
           Collection
         </Link>
-        <Link classNameName="Links" to="/Search">
+        <Link className="Links" to="/Search">
           Search
         </Link>
-        <Link classNameName="Links" to="/SignUp">
+        <Link className="Links" to="/SignUp">
           Sign Up
         </Link>
-
-        <div>{user.username}</div>
-        <div>{user.collection_id}</div>
       </div>
+
+      <h1 className="tcgdexheader">Welcome to TCGdex!</h1>
       <div className="ContainerHalfway">
         <div className="ContainerRow">
           <div className="ContainerColumn">
@@ -88,7 +87,9 @@ export default function Home() {
                 className="textbutton"
                 src="/assets/search.png"
                 text="Search For Pokemons"
-              />
+              >
+                Search!
+              </button>
             </Link>
           </div>
           <div className="ContainerColumn">
@@ -102,7 +103,9 @@ export default function Home() {
                 className="textbutton"
                 src="/assets/pokeball.png"
                 text="Create a new Profile"
-              />
+              >
+                Sign Up!
+              </button>
             </Link>
           </div>
         </div>

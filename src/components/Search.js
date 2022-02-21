@@ -93,16 +93,16 @@ export default function Search() {
   return (
     <Fragment>
       <div className="NavBars">
-      <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="40"
-      viewBox="0 0 1024 1024"
-      fill="currentColor"
-    >
-      <path
-        strokeWidth="1"
-        d="M 512.00,96.80
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 1024 1024"
+          fill="currentColor"
+        >
+          <path
+            strokeWidth="1"
+            d="M 512.00,96.80
            C 304.28,96.94 132.17,249.33 101.24,448.41
              101.24,448.41 312.51,448.80 312.51,448.80
              339.50,364.37 418.60,303.25 512.00,303.20
@@ -127,8 +127,8 @@ export default function Search() {
              418.75,722.29 339.76,661.27 312.67,576.99
              312.67,576.99 101.47,576.80 101.47,576.80
              101.47,576.80 101.47,576.80 101.47,576.80 Z"
-      />
-    </svg>
+          />
+        </svg>
         <Link className="Links" to="/home">
           Home
         </Link>
@@ -152,25 +152,40 @@ export default function Search() {
           onChange={(e) => setPokename(e.target.value)}
         ></input>
         <button onClick={handleSubmit}>Search</button>
-        
-        
+
         <div className="ContainerColumn">
           <br />
-        <p><img src="https://i0.wp.com/pkmncards.com/wp-content/uploads/en_US-Promo_HGSS-HGSS05-hoothoot.jpg?fit=734%2C1024&ssl=1" width="150" alt="pokemon png image famous anime character png only" />       
-          <img src="https://i0.wp.com/pkmncards.com/wp-content/uploads/en_US-Promo_HGSS-HGSS13-smoochum.jpg?fit=734%2C1024&ssl=1" width="150" alt="pokemon png jigglypuff pok dex" />
-        <img src="https://i0.wp.com/pkmncards.com/wp-content/uploads/en_US-Promo_HGSS-HGSS17-minun.jpg?fit=734%2C1024&ssl=1" width="150" alt="pokemon png image famous anime character png only" /> 
-        <img src="https://i0.wp.com/pkmncards.com/wp-content/uploads/en_US-Promo_HGSS-HGSS12-cleffa.jpg?fit=734%2C1024&ssl=1" width="150" alt="pokemon everything all you will ever need know" />
-        </p> 
+          <p>
+            <img
+              src="https://i0.wp.com/pkmncards.com/wp-content/uploads/en_US-Promo_HGSS-HGSS05-hoothoot.jpg?fit=734%2C1024&ssl=1"
+              width="150"
+              alt="pokemon png image famous anime character png only"
+            />
+            <img
+              src="https://i0.wp.com/pkmncards.com/wp-content/uploads/en_US-Promo_HGSS-HGSS13-smoochum.jpg?fit=734%2C1024&ssl=1"
+              width="150"
+              alt="pokemon png jigglypuff pok dex"
+            />
+            <img
+              src="https://i0.wp.com/pkmncards.com/wp-content/uploads/en_US-Promo_HGSS-HGSS17-minun.jpg?fit=734%2C1024&ssl=1"
+              width="150"
+              alt="pokemon png image famous anime character png only"
+            />
+            <img
+              src="https://i0.wp.com/pkmncards.com/wp-content/uploads/en_US-Promo_HGSS-HGSS12-cleffa.jpg?fit=734%2C1024&ssl=1"
+              width="150"
+              alt="pokemon everything all you will ever need know"
+            />
+          </p>
         </div>
-        
-        </form>
+      </form>
       <div className="cardImages">
         {cardsFetched ? (
           cards.data.map((card) => (
             <div className="searchedCards" key={card.id}>
               <div className="singleCard">
                 <img src={card.images.small} />
-                <p>{card.id}</p>
+                <p>Card ID : {card.id}</p>
               </div>
             </div>
           ))
@@ -178,11 +193,10 @@ export default function Search() {
           <div>Searched cards will appear below</div>
         )}
       </div>
-    
-      <br />
-      <br />
-      <br />
 
+      <br />
+      <br />
+      <br />
 
       <form>
         <p>Enter card id here to add it to your collection</p>
@@ -191,7 +205,7 @@ export default function Search() {
           Add Card
         </button>
       </form>
-      
+
       <br />
     </Fragment>
   );
