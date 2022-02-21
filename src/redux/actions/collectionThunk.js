@@ -8,7 +8,7 @@ export const getCollectionThunk = (collection_id) => async (dispatch) => {
   try {
     dispatch({ type: START_FETCHING_COLLECTION });
     const collection = await fetch(
-      `http://localhost:5000/collection/${collection_id}`
+      `https://tcgdex.herokuapp.com/collection/${collection_id}`
     );
     const data = await collection.json();
     //console.log(data);
