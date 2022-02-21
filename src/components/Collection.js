@@ -53,7 +53,7 @@ export default function Collection() {
         try {
           console.log("hello");
           const response = await fetch(
-            `http://localhost:5000/card/${currentCardId}`
+            `https://tcgdex.herokuapp.com/card/${currentCardId}`
           );
           const cardData = await response.json();
           console.log(cardData);
