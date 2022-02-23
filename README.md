@@ -7,7 +7,7 @@
 <ol>
   <li>Clone the backend repo</li>
   <li>Run the local server</li>
-  <li>Clone this frontend repo and `cd` into this directory</li>
+  <li>Clone this frontend repo and `$cd` into this directory</li>
 </ol>
   
 React Redux Pokedex
