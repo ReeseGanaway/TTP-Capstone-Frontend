@@ -4,11 +4,11 @@
 
 <h2>Run Locally</h2>
 <p>Follow these steps to run the app locally on your machine.<p>
-<ol>
-  <li>Clone the backend repo</li>
-  <li>Run the local server</li>
-  <li>Clone this frontend repo and `$cd` into this directory</li>
-</ol>
+
+ 1.Clone the backend repo
+ 2.Run the local server
+ 3.Clone this frontend repo and `$cd` into this directory
+
   
 React Redux Pokedex
 Project made with JAVASCRIPT JS, REACT, STYLED-COMPONENTS, REDUX, POSTGRES
