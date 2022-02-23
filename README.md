@@ -1,4 +1,4 @@
-<h1>Tcgdex</h1>
+<h1 align="center">Tcgdex</h1>
 
 
 React Redux Pokedex
