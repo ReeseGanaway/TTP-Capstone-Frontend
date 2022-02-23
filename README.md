@@ -15,34 +15,22 @@ Follow these steps to run the app locally on your machine.<p>
   If you simply wish to use the already set up app, just use the link at the top of the page!
   
 
-<h3>Features</h3>
+### Features
  
  * Create a profile
  * Search for cards
- * Add cards to collection
+ * Add cards to collection by using card id number
 
   
-React Redux Pokedex
-Project made with JAVASCRIPT JS, REACT, STYLED-COMPONENTS, REDUX, POSTGRES
 
-
-Features:
-Add pokemons to your pokedex
-Search pokemons by number/name
-See pokemon's details
-Find pokemons of a type (e.g. all evolutions of pikachu)
-
-
-
-Commands:
-Description     	                   Command
-install styled components	       npm i styled-components
-install react-alice-carousel       npm install react-alice-carousel
-
-
-
-To Search Pokemon
-By Name: charizard
-
-To Add to collection
-By ID: dp3-3
+### Tech Stack
+  
+  *React
+  *Redux
+  *JavaScript
+  *HTML
+  *CSS
+  *PostgreSQL
+  *Heroku
+  *Netlify
+  
