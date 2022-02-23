@@ -16,7 +16,9 @@ Follow these steps to run the app locally on your machine.<p>
   
  <h3>Features</h3>
  
- *Create a profile
+ * Create a profile
+ * Search for cards
+ * Add cards to collection
 
   
 React Redux Pokedex
