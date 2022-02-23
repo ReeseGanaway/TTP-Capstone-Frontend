@@ -17,9 +17,11 @@ Follow these steps to run the app locally on your machine.<p>
 
 ### Features
  
+  * Pages for creating/logging into an account, viewing collection, and searching cards
  * Create a profile
  * Search for cards
  * Add cards to collection by using card id number
+  * View your collection
 
   
 
