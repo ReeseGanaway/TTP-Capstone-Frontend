@@ -8,7 +8,9 @@ Follow these steps to run the app locally on your machine.<p>
 
 1. Clone the backend repo
 2. Run the local server
-3. Clone this frontend repo and `$cd` into this directory
+3. Clone this frontend repo and `$ cd` into this directory
+4. `$ npm install` the project's dependencies
+  5. `$ npm start` to run the app
 
   
 React Redux Pokedex
