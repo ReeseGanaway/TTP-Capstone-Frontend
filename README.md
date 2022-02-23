@@ -1,6 +1,6 @@
 <h1 align="center">Tcgdex</h1>
 
-<p>Tcgdex is a full stack web application meant to make keeping track of your Pokémon card colllection easier. After making an account on our web app, users can search for and add cards to their collections.</p>
+<p>Tcgdex is a full stack web application meant to make keeping track of your Pokémon card colllection easier. After making an account on our <a href="https://tcgdex.netlify.app/">web app</a>, users can search for and add cards to their collections.</p>
 
 React Redux Pokedex
 Project made with JAVASCRIPT JS, REACT, STYLED-COMPONENTS, REDUX, POSTGRES
