@@ -2,6 +2,8 @@
 
 <p>Tcgdex is a full stack web application meant to make keeping track of your Pokémon card colllection easier. After making an account on our <a href="https://tcgdex.netlify.app/">web app</a>, users can search for and add cards to their collections.</p>
 
+<h2>Run Locally</h2>
+
 React Redux Pokedex
 Project made with JAVASCRIPT JS, REACT, STYLED-COMPONENTS, REDUX, POSTGRES
 
