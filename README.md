@@ -1,3 +1,6 @@
+<h1>Tcgdex</h1>
+
+
 React Redux Pokedex
 Project made with JAVASCRIPT JS, REACT, STYLED-COMPONENTS, REDUX, POSTGRES
 
