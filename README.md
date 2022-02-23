@@ -14,7 +14,8 @@ Follow these steps to run the app locally on your machine.<p>
   
   If you simply wish to use the already set up app, just use the link at the top of the page!
   
- <h3>Features</h3>
+
+<h3>Features</h3>
  
  * Create a profile
  * Search for cards
