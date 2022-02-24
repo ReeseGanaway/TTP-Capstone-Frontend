@@ -44,7 +44,7 @@ export default function Search() {
         let hp = cards.data[i].hp;
         let image = cards.data[i].images.small;
         const body = { card_id, pokemon, type, hp, image };
-        const response = await fetch("http://localhost:5000/card", {
+        const response = await fetch("https://tcgdex.herokuapp.com/card", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
@@ -64,7 +64,7 @@ export default function Search() {
     //e.preventDefault;
     try {
       const body = { collection_id, card_id };
-      const response = await fetch("http://localhost:5000/collection", {
+      const response = await fetch("https://tcgdex.herokuapp.com/collection", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
