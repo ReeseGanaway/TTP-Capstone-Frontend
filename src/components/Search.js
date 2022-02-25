@@ -78,6 +78,7 @@ export default function Search() {
 
   async function addToCollection2(cardId) {
     //e.preventDefault;
+    console.log(cardId);
     try {
       const body = { collection_id, cardId };
       const response = await fetch("https://tcgdex.herokuapp.com/collection", {
@@ -201,9 +202,7 @@ export default function Search() {
               <div className="singleCard">
                 <img src={card.images.small} />
                 <p>Card ID : {card.id}</p>
-                <button onClick={async (card) => addToCollection2(card.id)}>
-                  Add Card
-                </button>
+                <button onClick={() => addToCollection2(key)}>Add Card</button>
               </div>
             </div>
           ))
