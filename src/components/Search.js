@@ -202,7 +202,9 @@ export default function Search() {
               <div className="singleCard">
                 <img src={card.images.small} />
                 <p>Card ID : {card.id}</p>
-                <button onClick={() => addToCollection2(key)}>Add Card</button>
+                <button onClick={(card) => addToCollection2(card.id)}>
+                  Add Card
+                </button>
               </div>
             </div>
           ))
