@@ -45,6 +45,7 @@ export default function Search() {
         let image = cards.data[i].images.small;
         const body = { card_id, pokemon, type, hp, image };
         const response = await fetch("https://tcgdex.herokuapp.com/card", {
+          mode: "no-cors",
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
@@ -65,6 +66,24 @@ export default function Search() {
     try {
       const body = { collection_id, card_id };
       const response = await fetch("https://tcgdex.herokuapp.com/collection", {
+        mode: "no-cors",
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      console.log(response);
+    } catch (err) {
+      console.error(err.message);
+    }
+    return false;
+  }
+
+  async function addToCollection2(cardId) {
+    //e.preventDefault;
+    try {
+      const body = { collection_id, cardId };
+      const response = await fetch("https://tcgdex.herokuapp.com/collection", {
+        mode: "no-cors",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
@@ -145,7 +164,6 @@ export default function Search() {
           Search
         </Link>
       </div>
-
       <form>
         <input
           placeholder="Search Pokemon Name"
@@ -186,6 +204,9 @@ export default function Search() {
               <div className="singleCard">
                 <img src={card.images.small} />
                 <p>Card ID : {card.id}</p>
+                <button onClick={async (card) => addToCollection2(card.id)}>
+                  Add Card
+                </button>
               </div>
             </div>
           ))
@@ -193,11 +214,10 @@ export default function Search() {
           <div>Searched cards will appear below</div>
         )}
       </div>
-
+      x
       <br />
       <br />
       <br />
-
       <form>
         <p>Enter card id here to add it to your collection</p>
         <input onChange={(e) => setCard_id(e.target.value)}></input>
@@ -205,7 +225,6 @@ export default function Search() {
           Add Card
         </button>
       </form>
-
       <br />
     </Fragment>
   );
