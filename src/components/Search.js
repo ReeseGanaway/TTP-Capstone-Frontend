@@ -83,6 +83,7 @@ export default function Search() {
     try {
       const body = { collection_id, cardId };
       const response = await fetch("https://tcgdex.herokuapp.com/collection", {
+        mode: "cors",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
