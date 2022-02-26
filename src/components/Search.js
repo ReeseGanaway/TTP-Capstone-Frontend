@@ -76,9 +76,9 @@ export default function Search() {
     return false;
   }
 
-  async function addToCollection2(card_id) {
+  async function addToCollection2(cardId) {
     //e.preventDefault;
-    console.log(card_id);
+    console.log(cardId);
     try {
       const body = { collection_id, cardId };
       const response = await fetch("https://tcgdex.herokuapp.com/collection", {
