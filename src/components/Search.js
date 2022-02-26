@@ -203,7 +203,7 @@ export default function Search() {
               <div className="singleCard">
                 <img src={card.images.small} />
                 <p>Card ID : {card.id}</p>
-                <button onClick={(card) => console.log(card)}>Add Card</button>
+                <button onClick={() => console.log(card.id)}>Add Card</button>
               </div>
             </div>
           ))
