@@ -80,7 +80,7 @@ export default function Search() {
     //e.preventDefault;
     console.log(card_id);
     try {
-      const body = { collection_id, cardId };
+      const body = { collection_id, card_id };
       const response = await fetch("https://tcgdex.herokuapp.com/collection", {
         mode: "cors",
         method: "POST",
